@@ -4,137 +4,320 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>About — Alison Nicole Lee</title>
+<meta name="description" content="About Alison Nicole Lee — consultant, coach, and builder."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
+
   :root{
-    --lavender:#EAE6FB;
-    --lavender-mid:#AFA9EC;
-    --lavender-dark:#3C3489;
-    --mint:#D6F5EC;
-    --mint-mid:#5DCAA5;
-    --mint-dark:#085041;
-    --peach:#FAF0EC;
-    --peach-mid:#F0997B;
-    --peach-dark:#712B13;
-    --blush:#FCF0F5;
-    --blush-mid:#ED93B1;
-    --blush-dark:#72243E;
-    --text:#1a1a1a;
-    --text-muted:#666;
-    --bg:#fefefe;
+    --ink:      #12102b;
+    --ink-soft: #5c5785;
+    --bg:       #FDFCFF;
+    --lav:      #EAE6FB;
+    --lav-mid:  #AFA9EC;
+    --lav-dark: #3C3489;
+    --lav-xd:   #2a1f5c;
+    --rule:     rgba(175,169,236,.25);
+    --cream:    #FAF8FF;
   }
-  body{font-family:'Georgia',serif;background:var(--bg);color:var(--text);min-height:100vh;line-height:1.7}
+
+  @keyframes fadeIn{
+    from{opacity:0;transform:translateY(14px)}
+    to{opacity:1;transform:translateY(0)}
+  }
+  .f1{animation:fadeIn .6s ease .05s both}
+  .f2{animation:fadeIn .6s ease .18s both}
+  .f3{animation:fadeIn .6s ease .32s both}
+
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Jost',system-ui,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    min-height:100vh;
+    -webkit-font-smoothing:antialiased;
+  }
 
   /* NAV */
-  nav{padding:1.5rem 2rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #f0ece8}
-  .nav-name{font-size:1.1rem;font-weight:700;letter-spacing:.05em}
+  nav{
+    padding:1.25rem 3rem;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid var(--rule);
+    background:rgba(253,252,255,.95);
+    backdrop-filter:blur(12px);
+    position:sticky;top:0;z-index:100;
+  }
+  .nav-name{
+    font-family:'Playfair Display',Georgia,serif;
+    font-size:1.1rem;font-weight:700;letter-spacing:-.01em;
+  }
   .nav-name a{color:inherit;text-decoration:none}
-  .nav-links{display:flex;align-items:center;gap:1.25rem}
-  .nav-links a.nav-link{font-size:.9rem;color:var(--text-muted);text-decoration:none;transition:color .2s}
-  .nav-links a.nav-link:hover{color:var(--lavender-dark)}
-  .nav-links a.nav-link.active{color:var(--lavender-dark);font-weight:700}
-  .nav-contact{display:flex;align-items:center;gap:1rem}
-  .nav-contact a.nav-email{font-size:.85rem;color:var(--text-muted);text-decoration:none;border-bottom:1px solid var(--lavender-mid);padding-bottom:2px;transition:color .2s}
-  .nav-contact a.nav-email:hover{color:var(--lavender-dark)}
-  .nav-social{display:flex;gap:.65rem;align-items:center}
-  .nav-social a{display:flex;align-items:center;color:var(--text-muted);transition:color .2s;border-bottom:none!important;padding-bottom:0!important}
-  .nav-social a:hover{color:var(--lavender-dark)}
+  .nav-center{display:flex;gap:2.5rem}
+  .nav-center a{
+    font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;
+    font-weight:500;color:var(--ink-soft);text-decoration:none;transition:color .2s;
+  }
+  .nav-center a:hover,.nav-center a.active{color:var(--lav-dark)}
+  .nav-right{display:flex;gap:.75rem;align-items:center}
+  .nav-right a{color:var(--ink-soft);transition:color .2s;line-height:0}
+  .nav-right a:hover{color:var(--lav-dark)}
 
   /* HERO */
-  .hero{max-width:720px;margin:0 auto;padding:4rem 2rem 2rem;text-align:center}
-  .photo{width:180px;height:180px;border-radius:50%;object-fit:cover;margin:0 auto 1.75rem;display:block;border:4px solid white;box-shadow:0 0 0 3px var(--lavender-mid),0 8px 24px rgba(0,0,0,.06)}
-  .hero h1{font-size:clamp(2rem,5vw,3rem);font-weight:700;letter-spacing:-.02em;line-height:1.15;margin-bottom:1.25rem}
-  .hero h1 span{position:relative;display:inline-block}
-  .hero h1 span::after{content:'';position:absolute;bottom:2px;left:0;right:0;height:6px;background:var(--lavender);z-index:-1;border-radius:3px}
+  .hero{
+    background:var(--lav-dark);
+    color:white;
+    padding:6rem 3rem;
+    display:grid;
+    grid-template-columns:1fr 1.6fr;
+    gap:6rem;
+    align-items:center;
+  }
+  .hero-left{}
+  .hero-eyebrow{
+    font-size:.65rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+    opacity:.5;margin-bottom:1.25rem;
+  }
+  .hero-title{
+    font-family:'Playfair Display',Georgia,serif;
+    font-size:clamp(2.5rem,5vw,3.5rem);
+    font-weight:700;line-height:1.1;letter-spacing:-.02em;
+  }
+  .hero-title em{font-style:italic;font-weight:400;opacity:.75}
+  .hero-right{}
+  .hero-photo{
+    width:200px;height:200px;
+    border-radius:50%;
+    border:4px solid rgba(255,255,255,.3);
+    box-shadow:0 0 0 12px rgba(255,255,255,.08),0 20px 60px rgba(0,0,0,.25);
+    overflow:hidden;
+    margin-bottom:2rem;
+  }
+  .hero-photo img{width:100%;height:100%;object-fit:cover}
+  .hero-photo-initials{
+    width:100%;height:100%;
+    background:rgba(255,255,255,.1);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Playfair Display',serif;
+    font-size:3rem;font-weight:700;color:white;
+  }
+  .hero-bio{
+    font-size:1.05rem;font-weight:300;line-height:1.8;opacity:.88;
+    margin-bottom:2rem;
+  }
+  .hero-links{display:flex;gap:1.25rem;flex-wrap:wrap}
+  .hero-links a{
+    font-size:.85rem;font-weight:600;color:white;text-decoration:none;
+    letter-spacing:.06em;opacity:.65;
+    border-bottom:1px solid rgba(255,255,255,.25);padding-bottom:2px;
+    transition:opacity .2s,border-color .2s;
+  }
+  .hero-links a:hover{opacity:1;border-bottom-color:white}
 
-  /* BODY */
-  .content{max-width:680px;margin:0 auto;padding:1rem 2rem 3rem}
-  .content p{font-size:1.05rem;color:var(--text);margin-bottom:1.25rem}
-  .content p.lead{font-size:1.15rem;color:var(--text);font-style:italic;border-left:3px solid var(--lavender-mid);padding-left:1.25rem;margin-bottom:1.5rem}
-  .content h2{font-size:1.35rem;font-weight:700;margin:2.5rem 0 1rem;letter-spacing:-.01em}
-  .content h2 span{position:relative;display:inline-block}
-  .content h2 span::after{content:'';position:absolute;bottom:0;left:0;right:0;height:5px;background:var(--blush);z-index:-1;border-radius:2px}
-  .content ul{list-style:none;padding:0;margin:0 0 1.5rem}
-  .content li{font-size:1rem;color:var(--text);margin-bottom:1rem;padding-left:1.5rem;position:relative}
-  .content li::before{content:'❋';position:absolute;left:0;top:0;color:var(--blush-mid);font-size:.9rem}
-  .content li strong{font-weight:700}
-  .content a{color:var(--lavender-dark);text-decoration:none;border-bottom:1px solid var(--lavender-mid);padding-bottom:1px;transition:color .2s,border-color .2s}
-  .content a:hover{color:var(--blush-dark);border-bottom-color:var(--blush-mid)}
+  /* CONTENT */
+  .content{
+    max-width:960px;
+    margin:0 auto;
+    padding:6rem 3rem;
+    display:grid;
+    grid-template-columns:1fr 2fr;
+    gap:5rem;
+  }
+  .content-sidebar{}
+  .sidebar-section{margin-bottom:3rem}
+  .sidebar-label{
+    font-size:.62rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--lav-dark);margin-bottom:1rem;
+    display:flex;align-items:center;gap:.5rem;
+  }
+  .sidebar-label::before{content:'';width:14px;height:1px;background:var(--lav-dark)}
+  .sidebar-list{list-style:none}
+  .sidebar-list li{
+    font-size:.9rem;font-weight:300;color:var(--ink-soft);
+    padding:.4rem 0;border-bottom:1px solid var(--rule);line-height:1.5;
+  }
+  .sidebar-list li:last-child{border-bottom:none}
+  .sidebar-list li strong{font-weight:600;color:var(--ink);display:block}
 
-  /* CONTACT BLOCK */
-  .contact{background:var(--lavender);border-radius:20px;padding:1.75rem 2rem;margin-top:1.25rem}
-  .contact p{margin-bottom:.85rem;font-size:1rem}
-  .contact-row{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;font-size:.95rem}
-  .contact-row a{color:var(--lavender-dark);font-weight:700;border-bottom:none;display:inline-flex;align-items:center;gap:.4rem}
-  .contact-row a:hover{color:var(--blush-dark)}
-  .contact-row .sep{color:var(--text-muted);opacity:.5}
+  .content-main{}
+  .content-main p{
+    font-size:1.05rem;line-height:1.85;color:var(--ink);
+    font-weight:300;margin-bottom:1.5rem;
+  }
+  .content-main p.lead{
+    font-family:'Playfair Display',Georgia,serif;
+    font-size:1.25rem;font-style:italic;font-weight:400;
+    line-height:1.65;color:var(--lav-dark);margin-bottom:2rem;
+  }
+  .content-main h3{
+    font-family:'Playfair Display',Georgia,serif;
+    font-size:1.35rem;font-weight:700;letter-spacing:-.01em;
+    margin:2.5rem 0 1rem;color:var(--ink);
+  }
+
+  /* CONTACT */
+  .contact-section{
+    background:var(--lav);
+    padding:5rem 3rem;
+    text-align:center;
+  }
+  .contact-inner{max-width:560px;margin:0 auto}
+  .contact-title{
+    font-family:'Playfair Display',Georgia,serif;
+    font-size:2rem;font-weight:700;letter-spacing:-.02em;
+    margin-bottom:1rem;
+  }
+  .contact-sub{
+    font-size:1rem;font-weight:300;color:var(--ink-soft);line-height:1.7;
+    margin-bottom:2.5rem;
+  }
+  .contact-links{display:flex;justify-content:center;gap:1.25rem;flex-wrap:wrap}
+  .contact-links a{
+    display:inline-flex;align-items:center;gap:.5rem;
+    font-size:.85rem;font-weight:600;color:var(--lav-dark);text-decoration:none;
+    background:white;border-radius:100px;padding:.7rem 1.5rem;
+    border:1px solid rgba(175,169,236,.4);
+    transition:background .2s,transform .2s,box-shadow .2s;
+    letter-spacing:.03em;
+  }
+  .contact-links a:hover{
+    background:var(--lav-dark);color:white;
+    transform:translateY(-2px);box-shadow:0 8px 24px rgba(60,52,137,.2);
+  }
 
   /* FOOTER */
-  footer{text-align:center;padding:2rem;font-size:.8rem;color:#bbb;border-top:1px solid #f0ece8;margin-top:3rem}
+  footer{
+    padding:2rem 3rem;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-top:1px solid var(--rule);
+    font-size:.78rem;
+    color:var(--ink-soft);
+    opacity:.6;
+    flex-wrap:wrap;
+    gap:1rem;
+  }
+  footer a{color:inherit;text-decoration:none;transition:opacity .2s}
+  footer a:hover{opacity:1}
 
-  @media(max-width:500px){
-    nav{padding:1rem 1.25rem;flex-wrap:wrap;gap:.75rem}
-    .nav-contact{width:100%;justify-content:space-between}
-    .hero{padding:2.5rem 1.25rem 1.5rem}
-    .photo{width:140px;height:140px}
-    .content{padding:.5rem 1.25rem 2rem}
-    .contact{padding:1.25rem 1.25rem}
+  @media(max-width:900px){
+    .hero{grid-template-columns:1fr;gap:2rem;padding:4rem 2rem}
+    .content{grid-template-columns:1fr;gap:3rem;padding:4rem 2rem}
+    nav{padding:1rem 1.25rem}
+    .contact-section{padding:4rem 2rem}
+    footer{padding:2rem 1.25rem}
   }
 </style>
 </head>
 <body>
 
-<nav>
+<nav class="f1">
   <span class="nav-name"><a href="/">Alison Nicole Lee</a></span>
-  <span class="nav-links">
-    <a href="/" class="nav-link">Home</a>
-    <a href="/about" class="nav-link active">About</a>
-  </span>
-  <span class="nav-contact">
-    <a href="mailto:lee.alisonnicole@gmail.com" class="nav-email">lee.alisonnicole@gmail.com</a>
-    <span class="nav-social">
-      <a href="https://www.instagram.com/alison_wonderland1/" target="_blank" rel="noopener" aria-label="Instagram">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-      </a>
-      <a href="https://www.linkedin.com/in/alison-lee/" target="_blank" rel="noopener" aria-label="LinkedIn">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="3"/><line x1="8" y1="11" x2="8" y2="16"/><line x1="8" y1="8" x2="8" y2="8.5"/><path d="M12 16v-5m4 5v-3a2 2 0 0 0-4 0"/></svg>
-      </a>
-    </span>
-  </span>
+  <div class="nav-center">
+    <a href="/">Home</a>
+    <a href="/about" class="active">About</a>
+    <a href="/#coaching">Coaching</a>
+    <a href="/#apps">Apps</a>
+  </div>
+  <div class="nav-right">
+    <a href="https://www.instagram.com/alison_wonderland1/" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/alison-lee/" target="_blank" rel="noopener" aria-label="LinkedIn">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="3"/><line x1="8" y1="11" x2="8" y2="16"/><line x1="8" y1="8" x2="8" y2="8.5"/><path d="M12 16v-5m4 5v-3a2 2 0 0 0-4 0"/></svg>
+    </a>
+    <a href="mailto:lee.alisonnicole@gmail.com" aria-label="Email">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+    </a>
+  </div>
 </nav>
 
-<section class="hero">
-  <img src="alison.jpg" alt="Alison Nicole Lee" class="photo" />
-  <h1>Hey, I'm <span>Alison</span>.</h1>
-</section>
-
-<section class="content">
-  <p class="lead">I build things. Products, communities, tools, frameworks, the occasional clearer way of thinking about something. I'm drawn to the messy middle, when there's something real to work with but no one's figured out what to do with it yet.</p>
-
-  <p>Consultant at BCG (pricing, transformation, applied AI). Four years at P&amp;G before that, running a $40M portfolio. Wharton MBA, class of 2024. WashU before that.</p>
-
-  <h2>What I'm <span>working on</span></h2>
-  <ul>
-    <li><strong>Asian Girl Mental Health</strong>: my Substack about high performance, mental health, and what it actually costs to keep going. First-person, the things I wish someone had told me earlier.</li>
-    <li><strong>AI tools</strong>: I vibe-code small apps as a way to think. The values quiz on this site is one of them. There will be more.</li>
-  </ul>
-
-  <h2>Reach <span>out</span></h2>
-  <div class="contact">
-    <p>If you're building something real, navigating the messy middle, or somewhere in the middle of your own version of all this, I'd love to hear from you.</p>
-    <div class="contact-row">
-      <a href="mailto:lee.alisonnicole@gmail.com">📧 Email</a>
-      <span class="sep">·</span>
-      <a href="https://asiangirlmentalhealth.substack.com" target="_blank" rel="noopener">Substack</a>
-      <span class="sep">·</span>
+<section class="hero f2">
+  <div class="hero-left">
+    <div class="hero-eyebrow">About</div>
+    <h1 class="hero-title">Hi, I'm<br>Alison.<br><em>Nice to meet you.</em></h1>
+  </div>
+  <div class="hero-right">
+    <div class="hero-photo">
+      <img src="alison.jpg" alt="Alison Nicole Lee" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'hero-photo-initials\'>AN</div>'"/>
+    </div>
+    <p class="hero-bio">
+      Consultant at BCG working on applied AI. Career coach through All In. Builder of small tools that help me think. I write about burnout, identity, and what high performance actually costs.
+    </p>
+    <div class="hero-links">
+      <a href="mailto:lee.alisonnicole@gmail.com">Email</a>
       <a href="https://www.linkedin.com/in/alison-lee/" target="_blank" rel="noopener">LinkedIn</a>
-      <span class="sep">·</span>
       <a href="https://www.instagram.com/alison_wonderland1/" target="_blank" rel="noopener">Instagram</a>
     </div>
   </div>
 </section>
 
-<footer>© 2026 Alison Nicole Lee · Made with care</footer>
+<div class="content f3">
+  <aside class="content-sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-label">Experience</div>
+      <ul class="sidebar-list">
+        <li><strong>BCG</strong>Consultant, Applied AI (2023-present)</li>
+        <li><strong>Procter & Gamble</strong>Sr. Account Executive (2018-2022)</li>
+        <li><strong>All In</strong>Career Coach (present)</li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Education</div>
+      <ul class="sidebar-list">
+        <li><strong>The Wharton School</strong>MBA, Class of 2024</li>
+        <li><strong>Washington University</strong>BA, Psych & Marketing</li>
+      </ul>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Outside work</div>
+      <ul class="sidebar-list">
+        <li>Scuba diving</li>
+        <li>Snowboarding</li>
+        <li>Wheel pottery</li>
+        <li>Crocheting</li>
+      </ul>
+    </div>
+  </aside>
+
+  <main class="content-main">
+    <p class="lead">I build things. Products, communities, tools, frameworks, the occasional clearer way of thinking about something. I am drawn to the messy middle: when there is something real to work with but no one has figured out what to do with it yet.</p>
+
+    <p>At BCG I work on applied AI, which mostly means figuring out what AI can actually do inside organizations rather than what people say it can do. Before BCG I spent four years at P&G running a $30M to $40M portfolio, growing it by 28 points over target and winning the annual Dish Care Category Award along the way. I hold an MBA from Wharton, where I was EVP of Student Leadership and a William P. Lauder Leadership Fellow.</p>
+
+    <h3>On building</h3>
+    <p>I started vibe-coding tools to scratch my own itches. The Values Inventory came from wanting a more honest way to figure out what I actually cared about. Between came from trying to get more out of therapy. Greenhouse came from the aftermath of something hard. The tools exist because I needed them and could not find them.</p>
+
+    <h3>On coaching</h3>
+    <p>All In exists because I kept having the same conversation. Talented people with great resumes who were good at the game and not sure they wanted to keep playing it. I do not give generic career advice. I help people get honest with themselves about what is actually next and build toward it on purpose.</p>
+
+    <h3>On AI</h3>
+    <p>The gap is not between people who can use AI and people who cannot. It is between people who know what to ask and people who are just prompting into the void. I think a lot about how to close that gap at the individual and organizational level. It is the most interesting problem I have worked on.</p>
+  </main>
+</div>
+
+<section class="contact-section">
+  <div class="contact-inner">
+    <h2 class="contact-title">Say hello.</h2>
+    <p class="contact-sub">If you are building something real, navigating the messy middle, or somewhere in the middle of your own version of all this, I would love to hear from you.</p>
+    <div class="contact-links">
+      <a href="mailto:lee.alisonnicole@gmail.com">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+        Email me
+      </a>
+      <a href="https://www.linkedin.com/in/alison-lee/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.instagram.com/alison_wonderland1/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 Alison Nicole Lee</span>
+  <a href="/">Back to home</a>
+</footer>
 
 </body>
 </html>

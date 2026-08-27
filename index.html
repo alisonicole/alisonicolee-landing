@@ -4,154 +4,632 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Alison Nicole Lee</title>
+<meta name="description" content="Consultant at BCG. Career coach. Builder of tools for the messy middle."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
+
   :root{
-    --lavender:#EAE6FB;
-    --lavender-mid:#AFA9EC;
-    --lavender-dark:#3C3489;
-    --mint:#D6F5EC;
-    --mint-mid:#5DCAA5;
-    --mint-dark:#085041;
-    --peach:#FAF0EC;
-    --peach-mid:#F0997B;
-    --peach-dark:#712B13;
-    --blush:#FCF0F5;
-    --blush-mid:#ED93B1;
-    --blush-dark:#72243E;
-    --yellow:#FEFBD8;
-    --yellow-mid:#D4A72A;
-    --yellow-dark:#5C3D00;
-    --text:#1a1a1a;
-    --text-muted:#666;
-    --bg:#fefefe;
+    --ink:      #12102b;
+    --ink-soft: #5c5785;
+    --bg:       #FDFCFF;
+    --lav:      #EAE6FB;
+    --lav-mid:  #AFA9EC;
+    --lav-dark: #3C3489;
+    --lav-xd:   #2a1f5c;
+    --rule:     rgba(175,169,236,.25);
+    --cream:    #FAF8FF;
   }
-  body{font-family:'Georgia',serif;background:var(--bg);color:var(--text);min-height:100vh}
 
-  /* NAV */
-  nav{padding:1.5rem 2rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #f0ece8}
-  .nav-name{font-size:1.1rem;font-weight:700;letter-spacing:.05em}
-  .nav-contact{display:flex;align-items:center;gap:1rem}
-  .nav-contact a{font-size:.85rem;color:var(--text-muted);text-decoration:none;border-bottom:1px solid var(--lavender-mid);padding-bottom:2px;transition:color .2s}
-  .nav-contact a:hover{color:var(--lavender-dark)}
-  .nav-social{display:flex;gap:.65rem;align-items:center}
-  .nav-social a{display:flex;align-items:center;color:var(--text-muted);transition:color .2s;border-bottom:none!important;padding-bottom:0!important}
-  .nav-social a:hover{color:var(--lavender-dark)}
+  @keyframes fadeIn{
+    from{opacity:0;transform:translateY(14px)}
+    to{opacity:1;transform:translateY(0)}
+  }
+  .f1{animation:fadeIn .6s ease .05s both}
+  .f2{animation:fadeIn .6s ease .15s both}
+  .f3{animation:fadeIn .6s ease .28s both}
+  .f4{animation:fadeIn .6s ease .42s both}
+  .f5{animation:fadeIn .6s ease .56s both}
+  .f6{animation:fadeIn .6s ease .70s both}
+  .f7{animation:fadeIn .6s ease .84s both}
 
-  /* HERO */
-  .hero{max-width:820px;margin:0 auto;padding:5rem 2rem 3rem;text-align:center}
-  .avatar{width:90px;height:90px;border-radius:50%;background:var(--lavender);display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;font-size:2rem;font-weight:700;color:var(--lavender-dark);border:3px solid white;box-shadow:0 0 0 3px var(--lavender-mid)}
-  .hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:700;letter-spacing:-.02em;line-height:1.15;margin-bottom:1rem}
-  .hero h1 span{position:relative;display:inline-block}
-  .hero h1 span::after{content:'';position:absolute;bottom:2px;left:0;right:0;height:6px;background:var(--lavender);z-index:-1;border-radius:3px}
-  .tagline{font-size:1.1rem;color:var(--text-muted);max-width:480px;margin:0 auto 2rem;line-height:1.7;font-style:italic}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Jost',system-ui,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    min-height:100vh;
+    -webkit-font-smoothing:antialiased;
+  }
 
-  /* CARDS GRID */
-  .cards{max-width:900px;margin:0 auto;padding:2rem 2rem 5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
+  /* ── NAV ── */
+  nav{
+    padding:1.25rem 3rem;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid var(--rule);
+    background:rgba(253,252,255,.95);
+    backdrop-filter:blur(12px);
+    position:sticky;
+    top:0;
+    z-index:100;
+  }
+  .nav-name{
+    font-family:'Playfair Display',Georgia,serif;
+    font-size:1.1rem;
+    font-weight:700;
+    letter-spacing:-.01em;
+  }
+  .nav-name a{color:inherit;text-decoration:none}
+  .nav-center{display:flex;gap:2.5rem}
+  .nav-center a{
+    font-size:.78rem;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    font-weight:500;
+    color:var(--ink-soft);
+    text-decoration:none;
+    transition:color .2s;
+  }
+  .nav-center a:hover{color:var(--lav-dark)}
+  .nav-right{display:flex;gap:.75rem;align-items:center}
+  .nav-right a{color:var(--ink-soft);transition:color .2s;line-height:0}
+  .nav-right a:hover{color:var(--lav-dark)}
 
-  .card{border-radius:20px;padding:2rem 1.75rem 1.75rem;display:flex;flex-direction:column;gap:.75rem;text-decoration:none;color:var(--text);transition:transform .2s,box-shadow .2s;position:relative;overflow:hidden}
-  .card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,0,0,.08)}
+  /* ── HERO ── */
+  .hero{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    min-height:86vh;
+    max-height:900px;
+  }
+  .hero-photo-col{
+    background:var(--lav);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:3rem;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-photo-col::before{
+    content:'';
+    position:absolute;
+    bottom:-80px;right:-80px;
+    width:300px;height:300px;
+    border-radius:50%;
+    background:rgba(60,52,137,.08);
+  }
+  .hero-photo-col::after{
+    content:'';
+    position:absolute;
+    top:-40px;left:-40px;
+    width:180px;height:180px;
+    border-radius:50%;
+    background:rgba(60,52,137,.05);
+  }
+  .photo-frame{
+    width:260px;height:260px;
+    border-radius:50%;
+    border:5px solid white;
+    box-shadow:0 0 0 12px rgba(175,169,236,.4),0 20px 60px rgba(60,52,137,.2);
+    overflow:hidden;
+    position:relative;
+    z-index:1;
+  }
+  .photo-frame img{width:100%;height:100%;object-fit:cover}
+  .photo-initials{
+    width:100%;height:100%;
+    background:var(--lav-dark);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Playfair Display',serif;
+    font-size:4rem;font-weight:700;
+    color:white;letter-spacing:-.02em;
+  }
+  .hero-text-col{
+    display:flex;flex-direction:column;justify-content:center;
+    padding:4rem 4rem 4rem 5rem;
+  }
+  .hero-eyebrow{
+    font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--lav-dark);margin-bottom:1.75rem;
+    display:flex;align-items:center;gap:.75rem;
+  }
+  .hero-eyebrow::before{content:'';width:28px;height:1px;background:var(--lav-dark)}
+  .hero-h1{
+    font-family:'Playfair Display',Georgia,serif;
+    font-size:clamp(2.8rem,4.5vw,5rem);
+    font-weight:900;line-height:1.05;letter-spacing:-.03em;
+    color:var(--ink);margin-bottom:2rem;
+  }
+  .hero-h1 em{font-style:italic;font-weight:400;color:var(--lav-dark)}
+  .hero-desc{
+    font-size:1.05rem;color:var(--ink-soft);line-height:1.7;
+    font-weight:300;max-width:420px;margin-bottom:2.5rem;
+  }
+  .hero-meta{display:flex;gap:2rem;flex-wrap:wrap}
+  .meta-item{display:flex;flex-direction:column;gap:.2rem}
+  .meta-label{font-size:.65rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--lav-mid)}
+  .meta-value{font-size:.9rem;font-weight:500;color:var(--ink)}
+  .hero-cta{
+    display:inline-flex;align-items:center;gap:.6rem;
+    background:var(--lav-dark);color:white;text-decoration:none;
+    padding:.85rem 2rem;border-radius:100px;
+    font-size:.85rem;font-weight:600;letter-spacing:.04em;
+    margin-top:2.5rem;width:fit-content;
+    transition:background .25s,transform .2s,box-shadow .25s;
+  }
+  .hero-cta:hover{background:var(--lav-xd);transform:translateY(-2px);box-shadow:0 8px 28px rgba(60,52,137,.3)}
+  .hero-cta svg{transition:transform .2s}
+  .hero-cta:hover svg{transform:translateY(3px)}
 
-  .card-coaching{background:var(--lavender)}
-  .card-therapy{background:var(--mint)}
-  .card-gratitude{background:var(--peach)}
-  .card-values{background:var(--blush)}
-  .card-tender{background:var(--yellow)}
+  /* ── POV STRIP ── */
+  .pov-strip{
+    background:var(--lav);
+    padding:5rem 3rem;
+    text-align:center;
+  }
+  .pov-inner{max-width:780px;margin:0 auto}
+  .pov-label{
+    font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--lav-dark);opacity:.65;margin-bottom:2rem;
+  }
+  .pov-quote{
+    font-family:'Playfair Display',Georgia,serif;
+    font-size:clamp(1.35rem,2.8vw,2rem);
+    font-weight:400;font-style:italic;
+    line-height:1.55;letter-spacing:-.01em;
+    color:var(--lav-xd);
+    margin-bottom:1.5rem;
+  }
+  .pov-quote strong{
+    font-style:normal;font-weight:700;
+    color:var(--lav-dark);
+  }
+  .pov-attr{
+    font-size:.8rem;font-weight:500;letter-spacing:.06em;
+    color:var(--ink-soft);opacity:.6;
+  }
 
-  .card-icon{font-size:1.6rem;margin-bottom:.25rem}
-  .card-label{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;opacity:.55;margin-bottom:.15rem}
-  .card h2{font-size:1.3rem;font-weight:700;line-height:1.25}
-  .card p{font-size:.9rem;color:var(--text-muted);line-height:1.6;flex:1}
-  .card-arrow{font-size:1.1rem;align-self:flex-end;opacity:.5;transition:opacity .2s,transform .2s}
-  .card:hover .card-arrow{opacity:1;transform:translate(3px,-3px)}
+  /* ── ABOUT SECTION ── */
+  .about-section{
+    background:var(--lav-dark);
+    color:white;
+    padding:6rem 3rem;
+    display:grid;
+    grid-template-columns:1fr 1.6fr;
+    gap:6rem;
+    align-items:center;
+  }
+  .about-left .about-eyebrow{
+    font-size:.65rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+    opacity:.5;margin-bottom:1.25rem;
+  }
+  .about-title{
+    font-family:'Playfair Display',Georgia,serif;
+    font-size:2.4rem;font-weight:700;line-height:1.15;letter-spacing:-.02em;
+  }
+  .about-title em{font-style:italic;font-weight:400;opacity:.75}
+  .about-bio{
+    font-size:1.05rem;font-weight:300;line-height:1.8;
+    opacity:.88;margin-bottom:2rem;
+  }
+  .about-links{display:flex;gap:1.25rem;flex-wrap:wrap}
+  .about-links a{
+    font-size:.85rem;font-weight:600;color:white;text-decoration:none;
+    letter-spacing:.06em;opacity:.65;
+    border-bottom:1px solid rgba(255,255,255,.25);padding-bottom:2px;
+    transition:opacity .2s,border-color .2s;
+  }
+  .about-links a:hover{opacity:1;border-bottom-color:white}
 
-  .card-coaching .card-label,.card-coaching .card-arrow{color:var(--lavender-dark)}
-  .card-therapy .card-label,.card-therapy .card-arrow{color:var(--mint-dark)}
-  .card-gratitude .card-label,.card-gratitude .card-arrow{color:var(--peach-dark)}
-  .card-values .card-label,.card-values .card-arrow{color:var(--blush-dark)}
-  .card-tender .card-label,.card-tender .card-arrow{color:var(--yellow-dark)}
+  /* ── SECTION WRAPPER ── */
+  .section{padding:6rem 3rem}
+  .section-header{
+    display:flex;align-items:baseline;
+    justify-content:space-between;
+    margin-bottom:2.5rem;
+    padding-bottom:1.25rem;
+    border-bottom:1px solid var(--rule);
+  }
+  .section-title{
+    font-family:'Playfair Display',Georgia,serif;
+    font-size:1.75rem;font-weight:700;letter-spacing:-.02em;
+  }
+  .section-label{
+    font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--lav-dark);background:var(--lav);
+    border-radius:100px;padding:.35rem .9rem;
+  }
 
-  /* FOOTER */
-  footer{text-align:center;padding:2rem;font-size:.8rem;color:#bbb;border-top:1px solid #f0ece8}
+  /* ── COACHING CARD ── */
+  .coaching-card{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    background:var(--cream);
+    border:1px solid var(--rule);
+    border-radius:20px;
+    overflow:hidden;
+    text-decoration:none;
+    color:var(--ink);
+    transition:transform .2s,box-shadow .2s;
+  }
+  .coaching-card:hover{transform:translateY(-4px);box-shadow:0 20px 56px rgba(60,52,137,.12)}
+  .coaching-left{
+    padding:3.5rem;
+    display:flex;flex-direction:column;justify-content:space-between;
+  }
+  .coaching-cat{
+    font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--lav-dark);margin-bottom:1.25rem;
+    display:flex;align-items:center;gap:.6rem;
+  }
+  .coaching-cat::before{content:'';width:20px;height:1px;background:var(--lav-dark)}
+  .coaching-name{
+    font-family:'Playfair Display',Georgia,serif;
+    font-size:3rem;font-weight:900;line-height:1.05;letter-spacing:-.03em;
+    margin-bottom:1.25rem;
+  }
+  .coaching-name em{font-style:italic;font-weight:400;color:var(--lav-dark)}
+  .coaching-desc{
+    font-size:1rem;color:var(--ink-soft);line-height:1.7;
+    font-weight:300;margin-bottom:2rem;
+  }
+  .coaching-cta{
+    display:inline-flex;align-items:center;gap:.5rem;
+    background:var(--lav-dark);color:white;
+    padding:.75rem 1.75rem;border-radius:100px;
+    font-size:.82rem;font-weight:600;letter-spacing:.05em;
+    width:fit-content;transition:background .2s,transform .2s;
+  }
+  .coaching-card:hover .coaching-cta{background:var(--lav-xd);transform:translateX(3px)}
+  .coaching-right{
+    background:var(--lav);
+    display:flex;align-items:center;justify-content:center;
+    padding:3rem;
+  }
+  .coaching-graphic{
+    width:180px;height:180px;
+    border-radius:50%;
+    background:rgba(60,52,137,.12);
+    display:flex;align-items:center;justify-content:center;
+    font-size:5rem;
+    position:relative;
+  }
+  .coaching-graphic::after{
+    content:'';
+    position:absolute;inset:-16px;
+    border-radius:50%;
+    border:1px dashed rgba(60,52,137,.25);
+  }
 
-  @media(max-width:500px){
-    .hero{padding:3rem 1.25rem 2rem}
-    .cards{padding:1rem 1.25rem 3rem;gap:1rem}
+  /* ── NOW SECTION ── */
+  .now-section{
+    background:var(--ink);
+    color:white;
+    padding:6rem 3rem;
+  }
+  .now-inner{max-width:1000px;margin:0 auto}
+  .now-header{
+    display:flex;align-items:baseline;justify-content:space-between;
+    margin-bottom:3rem;
+    padding-bottom:1.25rem;
+    border-bottom:1px solid rgba(255,255,255,.1);
+  }
+  .now-title{
+    font-family:'Playfair Display',Georgia,serif;
+    font-size:1.75rem;font-weight:700;letter-spacing:-.02em;
+  }
+  .now-date{
+    font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;
+    opacity:.35;
+  }
+  .now-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:2rem;
+  }
+  .now-item{}
+  .now-item-label{
+    font-size:.62rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--lav-mid);margin-bottom:.75rem;
+    display:flex;align-items:center;gap:.5rem;
+  }
+  .now-item-label::before{content:'';width:14px;height:1px;background:var(--lav-mid)}
+  .now-item-text{
+    font-size:.97rem;font-weight:300;line-height:1.65;
+    opacity:.8;
+  }
+  .now-item-text strong{font-weight:600;opacity:1;color:white}
+
+  /* ── APPS GRID ── */
+  .apps-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:1.25rem;
+  }
+  .app-card{
+    border:1px solid var(--rule);
+    border-top:3px solid var(--lav-dark);
+    border-radius:14px;
+    padding:1.75rem 1.5rem;
+    text-decoration:none;
+    color:var(--ink);
+    display:flex;flex-direction:column;gap:.5rem;
+    background:white;
+    transition:transform .2s,box-shadow .2s,border-top-color .2s;
+  }
+  .app-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 16px 40px rgba(60,52,137,.1);
+    border-top-color:var(--lav-mid);
+  }
+  .app-icon{font-size:1.5rem;margin-bottom:.4rem}
+  .app-cat{font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--lav-dark)}
+  .app-name{
+    font-family:'Playfair Display',Georgia,serif;
+    font-size:1.2rem;font-weight:700;line-height:1.2;margin-bottom:.15rem;
+  }
+  .app-desc{font-size:.85rem;color:var(--ink-soft);line-height:1.6;font-weight:300;flex:1}
+  .app-link{
+    margin-top:.75rem;font-size:.75rem;font-weight:600;color:var(--lav-dark);
+    display:flex;align-items:center;gap:.25rem;letter-spacing:.04em;
+    transition:gap .2s;
+  }
+  .app-card:hover .app-link{gap:.5rem}
+
+  /* ── FOOTER ── */
+  .footer-section{
+    background:var(--cream);
+    border-top:1px solid var(--rule);
+    padding:4rem 3rem;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:2rem;
+  }
+  .footer-name{
+    font-family:'Playfair Display',Georgia,serif;
+    font-size:1.5rem;font-weight:700;letter-spacing:-.01em;
+  }
+  .footer-links{display:flex;gap:2rem;align-items:center}
+  .footer-links a{
+    font-size:.82rem;font-weight:500;letter-spacing:.06em;
+    color:var(--ink-soft);text-decoration:none;transition:color .2s;
+  }
+  .footer-links a:hover{color:var(--lav-dark)}
+  .footer-copy{font-size:.75rem;color:var(--ink-soft);opacity:.5;width:100%;text-align:center;margin-top:1rem}
+
+  /* ── RESPONSIVE ── */
+  @media(max-width:1100px){
+    .apps-grid{grid-template-columns:repeat(2,1fr)}
+    .now-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media(max-width:900px){
+    .hero{grid-template-columns:1fr;min-height:auto}
+    .hero-photo-col{padding:3rem 2rem;min-height:300px}
+    .hero-text-col{padding:3rem 2rem}
+    .about-section{grid-template-columns:1fr;gap:2.5rem;padding:4rem 2rem}
+    .coaching-card{grid-template-columns:1fr}
+    .coaching-right{display:none}
+    .section{padding:4rem 2rem}
+    .now-section{padding:4rem 2rem}
+    .pov-strip{padding:4rem 2rem}
+    .footer-section{padding:3rem 2rem}
+  }
+  @media(max-width:640px){
     nav{padding:1rem 1.25rem}
+    .nav-center{gap:1.5rem}
+    .apps-grid{grid-template-columns:1fr 1fr}
+    .now-grid{grid-template-columns:1fr 1fr}
+    .footer-section{flex-direction:column;align-items:flex-start}
+  }
+  @media(max-width:480px){
+    .apps-grid{grid-template-columns:1fr}
+    .now-grid{grid-template-columns:1fr}
   }
 </style>
 </head>
 <body>
 
-<nav>
-  <span class="nav-name"><a href="/" style="color:inherit;text-decoration:none">Alison Nicole Lee</a></span>
-  <span style="display:flex;gap:1.25rem;align-items:center">
-    <a href="/about" style="font-size:.9rem;color:#666;text-decoration:none">About</a>
-  </span>
-  <span class="nav-contact">
-    <a href="mailto:lee.alisonnicole@gmail.com">lee.alisonnicole@gmail.com</a>
-    <span class="nav-social">
-      <a href="https://www.instagram.com/alison_wonderland1/" target="_blank" rel="noopener" aria-label="Instagram">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-      </a>
-      <a href="https://www.linkedin.com/in/alison-lee/" target="_blank" rel="noopener" aria-label="LinkedIn">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="3"/><line x1="8" y1="11" x2="8" y2="16"/><line x1="8" y1="8" x2="8" y2="8.5"/><path d="M12 16v-5m4 5v-3a2 2 0 0 0-4 0"/></svg>
-      </a>
-    </span>
-  </span>
+<!-- NAV -->
+<nav class="f1">
+  <span class="nav-name"><a href="/">Alison Nicole Lee</a></span>
+  <div class="nav-center">
+    <a href="#about">About</a>
+    <a href="#coaching">Coaching</a>
+    <a href="#apps">Apps</a>
+    <a href="#now">Now</a>
+  </div>
+  <div class="nav-right">
+    <a href="https://www.instagram.com/alison_wonderland1/" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/alison-lee/" target="_blank" rel="noopener" aria-label="LinkedIn">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="3"/><line x1="8" y1="11" x2="8" y2="16"/><line x1="8" y1="8" x2="8" y2="8.5"/><path d="M12 16v-5m4 5v-3a2 2 0 0 0-4 0"/></svg>
+    </a>
+    <a href="mailto:lee.alisonnicole@gmail.com" aria-label="Email">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+    </a>
+  </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
-  <div class="avatar">AN</div>
-  <h1>Hello, I'm <span>Alison Nicole Lee</span></h1>
-  <p class="tagline">Builder, coach, and perpetual tinkerer — making tools and spaces that help people grow on purpose.</p>
+  <div class="hero-photo-col f2">
+    <div class="photo-frame">
+      <img src="alison.jpg" alt="Alison Nicole Lee" onerror="this.style.display='none';this.parentElement.innerHTML='<div class=\'photo-initials\'>AN</div>'"/>
+    </div>
+  </div>
+  <div class="hero-text-col f3">
+    <div class="hero-eyebrow">Consultant · Coach · Builder</div>
+    <h1 class="hero-h1">
+      Working in<br>the <em>messy</em><br>middle.
+    </h1>
+    <p class="hero-desc">
+      I write about the human cost of high performance and build the tools I wish existed for it. Consultant at BCG. Career coach through All In.
+    </p>
+    <div class="hero-meta">
+      <div class="meta-item">
+        <span class="meta-label">Currently</span>
+        <span class="meta-value">BCG Applied AI</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Education</span>
+        <span class="meta-value">Wharton MBA</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Based in</span>
+        <span class="meta-value">New York, NY</span>
+      </div>
+    </div>
+    <a href="#about" class="hero-cta">
+      Learn more
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    </a>
+  </div>
 </section>
 
-<div class="cards">
+<!-- POV STRIP -->
+<section class="pov-strip f4">
+  <div class="pov-inner">
+    <div class="pov-label">Point of view</div>
+    <p class="pov-quote">
+      "The gap is not between people who can use AI and people who can't.
+      It is between people who <strong>know what to ask</strong> and people who are just prompting into the void."
+    </p>
+    <div class="pov-attr">Alison Nicole Lee</div>
+  </div>
+</section>
 
-  <a href="https://coaching.alisonicolee.com" class="card card-coaching" target="_blank" rel="noopener">
-    <div class="card-icon">✦</div>
-    <span class="card-label">Coaching</span>
-    <h2>All In</h2>
-    <p>Career coaching for high-achievers who have the résumé but not the clarity. Honest, direct guidance to help you figure out what's actually next.</p>
-    <span class="card-arrow">↗</span>
+<!-- ABOUT -->
+<section class="about-section f4" id="about">
+  <div class="about-left">
+    <div class="about-eyebrow">About</div>
+    <h2 class="about-title">Hi, I'm<br>Alison.<br><em>Nice to meet you.</em></h2>
+  </div>
+  <div class="about-right">
+    <p class="about-bio">
+      Consultant at BCG working on applied AI. Career coach through All In. Builder of small tools that help me think. Before BCG I spent four years at P&G growing a $30M portfolio. I hold an MBA from Wharton. I write about burnout, identity, and what high performance actually costs. I build because the fastest way to understand something is to make it.
+    </p>
+    <div class="about-links">
+      <a href="mailto:lee.alisonnicole@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/alison-lee/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.instagram.com/alison_wonderland1/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+</section>
+
+<!-- COACHING -->
+<div class="section f5" id="coaching">
+  <div class="section-header">
+    <h2 class="section-title">Coaching</h2>
+    <span class="section-label">1:1 work</span>
+  </div>
+  <a href="https://coaching.alisonicolee.com" class="coaching-card" target="_blank" rel="noopener">
+    <div class="coaching-left">
+      <div>
+        <div class="coaching-cat">Career Coaching</div>
+        <div class="coaching-name">All <em>In.</em></div>
+        <p class="coaching-desc">
+          For high-achievers who have the resume but not the clarity. You are good at the game. You are not sure you want to keep playing it. Honest, direct guidance on what is actually next.
+        </p>
+      </div>
+      <span class="coaching-cta">
+        Work with me
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+      </span>
+    </div>
+    <div class="coaching-right">
+      <div class="coaching-graphic">✦</div>
+    </div>
   </a>
-
-  <a href="https://betweenapp.co" class="card card-therapy" target="_blank" rel="noopener">
-    <div class="card-icon">◈</div>
-    <span class="card-label">App</span>
-    <h2>Between</h2>
-    <p>A therapy prep tool that helps you make the most of every session — track patterns, organize your thoughts, and show up ready.</p>
-    <span class="card-arrow">↗</span>
-  </a>
-
-  <a href="https://gratefull.alisonicolee.com" class="card card-gratitude" target="_blank" rel="noopener">
-    <div class="card-icon">◉</div>
-    <span class="card-label">Tool</span>
-    <h2>Gratitude Jar</h2>
-    <p>A small daily practice, digitized. Drop in what you're grateful for and revisit it whenever you need a reminder.</p>
-    <span class="card-arrow">↗</span>
-  </a>
-
-  <a href="https://values.alisonicolee.com" class="card card-values" target="_blank" rel="noopener">
-    <div class="card-icon">❋</div>
-    <span class="card-label">Quiz</span>
-    <h2>Values Inventory</h2>
-    <p>A forced-choice quiz that ranks what you actually value. No self-rating, no lying to yourself. Five minutes, one honest mirror.</p>
-    <span class="card-arrow">↗</span>
-  </a>
-
-  <a href="https://efflorescence.alisonicolee.com" class="card card-tender" target="_blank" rel="noopener">
-    <div class="card-icon">✾</div>
-    <span class="card-label">App</span>
-    <h2>Efflorescence</h2>
-    <p>A healing companion for women navigating a breakup. Daily habits grow a living garden — nothing resets, nothing disappears. Things bloom.</p>
-    <span class="card-arrow">↗</span>
-  </a>
-
 </div>
 
-<footer>© 2026 Alison Nicole Lee · Made with care</footer>
+<!-- BUILT BY ME -->
+<div class="section f6" id="apps">
+  <div class="section-header">
+    <h2 class="section-title">Built by me</h2>
+    <span class="section-label">Vibe-coded</span>
+  </div>
+  <div class="apps-grid">
+
+    <a href="https://betweenapp.co" class="app-card" target="_blank" rel="noopener">
+      <div class="app-icon">◈</div>
+      <div class="app-cat">App</div>
+      <div class="app-name">Between</div>
+      <p class="app-desc">A therapy prep tool that helps you make the most of every session. Track patterns, organize thoughts, and show up ready.</p>
+      <span class="app-link">Explore <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
+    </a>
+
+    <a href="https://values.alisonicolee.com" class="app-card" target="_blank" rel="noopener">
+      <div class="app-icon">❋</div>
+      <div class="app-cat">Quiz</div>
+      <div class="app-name">Values Inventory</div>
+      <p class="app-desc">A forced-choice quiz that ranks what you actually value. No self-rating, no lying to yourself. Five minutes, one honest mirror.</p>
+      <span class="app-link">Take the quiz <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
+    </a>
+
+    <a href="https://gratefull.alisonicolee.com" class="app-card" target="_blank" rel="noopener">
+      <div class="app-icon">◉</div>
+      <div class="app-cat">Tool</div>
+      <div class="app-name">Gratitude Jar</div>
+      <p class="app-desc">A small daily practice, digitized. Drop in what you are grateful for and revisit it whenever you need a reminder.</p>
+      <span class="app-link">Try it <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
+    </a>
+
+    <a href="https://efflorescence.alisonicolee.com/" class="app-card" target="_blank" rel="noopener">
+      <div class="app-icon">✿</div>
+      <div class="app-cat">App</div>
+      <div class="app-name">Greenhouse</div>
+      <p class="app-desc">A healing companion for women navigating breakups. Habit tracking, journaling, and evidence-based tools. Because you were always the garden.</p>
+      <span class="app-link">Explore <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
+    </a>
+
+  </div>
+</div>
+
+<!-- NOW -->
+<section class="now-section f7" id="now">
+  <div class="now-inner">
+    <div class="now-header">
+      <h2 class="now-title">Now</h2>
+      <span class="now-date">August 2026</span>
+    </div>
+    <div class="now-grid">
+      <div class="now-item">
+        <div class="now-item-label">Building</div>
+        <p class="now-item-text"><strong>An applied AI product at BCG</strong> — working on the Helix team to bring agentic AI into how consulting gets done at scale.</p>
+      </div>
+      <div class="now-item">
+        <div class="now-item-label">Coaching</div>
+        <p class="now-item-text"><strong>1:1 clients through All In</strong> — working with high-achievers who have the resume and are ready to figure out what is actually next.</p>
+      </div>
+      <div class="now-item">
+        <div class="now-item-label">Making</div>
+        <p class="now-item-text"><strong>New tools for the messy middle</strong> — vibe-coding small apps to scratch my own itches. Greenhouse is the latest. More coming.</p>
+      </div>
+      <div class="now-item">
+        <div class="now-item-label">Asking</div>
+        <p class="now-item-text"><strong>What gets easier when you finally know what you value?</strong> The Values Inventory started as an experiment. The answer keeps surprising me.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer-section">
+  <div class="footer-name">Alison Nicole Lee</div>
+  <div class="footer-links">
+    <a href="mailto:lee.alisonnicole@gmail.com">lee.alisonnicole@gmail.com</a>
+    <a href="https://www.linkedin.com/in/alison-lee/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://www.instagram.com/alison_wonderland1/" target="_blank" rel="noopener">Instagram</a>
+  </div>
+  <div class="footer-copy">© 2026 Alison Nicole Lee</div>
+</footer>
 
 </body>
 </html>
