@@ -6,7 +6,7 @@
 <title>Alison Nicole Lee · Worth your tokens in gold</title>
 <meta name="description" content="Founding AI Transformation Strategist at Scribe. Put AI to work. Be worth your tokens in gold."/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
 
@@ -296,7 +296,16 @@
   .offer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
   .offer-card{border:1px solid var(--rule);border-radius:14px;background:white;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
   .offer-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(60,52,137,.1)}
-  .offer-card img{width:100%;height:auto;aspect-ratio:1200/630;object-fit:cover;display:block;border-bottom:1px solid var(--rule)}
+  .offer-art{aspect-ratio:1200/630;position:relative;overflow:hidden;background:var(--cream);border-bottom:1px solid var(--rule);container-type:inline-size}
+  .offer-art::before,.offer-art::after{content:'';position:absolute;border-radius:50%}
+  .offer-art::before{right:-19.2cqw;top:-20.8cqw;width:43.3cqw;height:43.3cqw;background:#E4DEF9}
+  .offer-art::after{right:10cqw;bottom:-16.7cqw;width:31.7cqw;height:31.7cqw;background:var(--lav)}
+  .offer-art-inner{position:absolute;inset:0 7.5cqw;display:flex;flex-direction:column;justify-content:center;z-index:1}
+  .offer-art-eyebrow{font-weight:700;font-size:3.33cqw;letter-spacing:.2em;text-transform:uppercase;color:var(--lav-dark);display:flex;align-items:center;gap:1.83cqw;margin-bottom:2.17cqw}
+  .offer-art-eyebrow::before{content:'';width:5.33cqw;height:.42cqw;background:#B8913F}
+  .offer-art-title{font-family:'Playfair Display',Georgia,serif;font-weight:800;font-size:12.5cqw;line-height:.98;letter-spacing:-.03em;color:#1E1A4F}
+  .offer-art-title.big{font-size:14.2cqw}
+  .offer-art-title em{font-style:italic;color:#B8913F}
   .offer-body{padding:1.6rem 1.5rem 1.75rem;display:flex;flex-direction:column;gap:.9rem;flex:1}
   .offer-top{display:flex;justify-content:space-between;align-items:baseline;gap:1rem}
   .offer-name{font-family:'Playfair Display',Georgia,serif;font-size:1.25rem;font-weight:700;line-height:1.2}
@@ -495,9 +504,9 @@
         <div class="path-year">2026</div>
         <div>
           <h3 class="path-title">Sideways into <em>AI</em></h3>
-          <p class="path-text">Jude, now my boyfriend, built an app with Claude Code to help friends find time to get together. I signed up that day and built my first app on the side. When I showed it to a colleague, he said, &ldquo;you know I do this at BCG, right?&rdquo; I had no idea that was an option.</p>
+          <p class="path-text">Someone close to me built an app with Claude Code to help friends find time to get together. I signed up that day and built my first app on the side. When I showed it to Thomas Cerenov, a colleague at BCG, he said, &ldquo;you know I do this at BCG, right?&rdquo; I had no idea that was an option.</p>
           <p class="path-text">I joined BCG's Applied AI team, shipped an agent now required on ~500 cases a year, and was promoted to Applied AI Lead, then Project Leader.</p>
-          <div class="path-door">Doors: Jude, and a colleague at BCG</div>
+          <div class="path-door">Doors: the person who showed me Claude Code, and Thomas</div>
         </div>
       </li>
       <li class="path-item self">
@@ -570,7 +579,7 @@
   <p class="coach-intro">I coach high-achievers through career pivots. Direct, practical, and warm. We start with what you actually want and work backward from there.</p>
   <div class="offer-grid">
     <article class="offer-card">
-      <img src="img/pivot-clarity-session.png" alt="Pivot Clarity Session" width="2400" height="1260" loading="lazy"/>
+      <div class="offer-art" role="img" aria-label="Pivot Clarity Session"><div class="offer-art-inner"><div class="offer-art-eyebrow">Career coaching</div><div class="offer-art-title">Pivot <em>Clarity</em><br>Session</div></div></div>
       <div class="offer-body">
         <div class="offer-top"><h3 class="offer-name">Pivot Clarity Session</h3><span class="offer-price">$225</span></div>
         <span class="offer-hours">1.5 hours · live + written</span>
@@ -581,7 +590,7 @@
       </div>
     </article>
     <article class="offer-card">
-      <img src="img/pivot-sprint.png" alt="Pivot Sprint" width="2400" height="1260" loading="lazy"/>
+      <div class="offer-art" role="img" aria-label="Pivot Sprint"><div class="offer-art-inner"><div class="offer-art-eyebrow">Career coaching</div><div class="offer-art-title big">Pivot<br><em>Sprint</em></div></div></div>
       <div class="offer-body">
         <div class="offer-top"><h3 class="offer-name">Pivot Sprint</h3><span class="offer-price">$600</span></div>
         <span class="offer-hours">4 hours over 6 weeks · live + async</span>
@@ -592,7 +601,7 @@
       </div>
     </article>
     <article class="offer-card">
-      <img src="img/consulting-interview-prep.png" alt="Consulting Interview Prep" width="2400" height="1260" loading="lazy"/>
+      <div class="offer-art" role="img" aria-label="Consulting Interview Prep"><div class="offer-art-inner"><div class="offer-art-eyebrow">Consulting</div><div class="offer-art-title big">Interview<br><em>Prep</em></div></div></div>
       <div class="offer-body">
         <div class="offer-top"><h3 class="offer-name">Consulting Interview Prep</h3><span class="offer-price">$450</span></div>
         <span class="offer-hours">3 hours · live</span>
