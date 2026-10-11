@@ -256,22 +256,6 @@
   .now-item-text{font-size:.97rem;font-weight:300;line-height:1.65;opacity:.8}
   .now-item-text strong{font-weight:600;opacity:1;color:white}
 
-  /* APPS */
-  .apps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem}
-  .app-card{
-    border:1px solid var(--rule);border-top:3px solid var(--lav-dark);
-    border-radius:14px;padding:1.75rem 1.5rem;text-decoration:none;color:var(--ink);
-    display:flex;flex-direction:column;gap:.5rem;background:white;
-    transition:transform .2s,box-shadow .2s,border-top-color .2s;
-  }
-  .app-card:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(60,52,137,.1);border-top-color:var(--lav-mid)}
-  .app-icon{font-size:1.5rem;margin-bottom:.4rem}
-  .app-cat{font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--lav-dark)}
-  .app-name{font-family:'Playfair Display',Georgia,serif;font-size:1.2rem;font-weight:700;line-height:1.2;margin-bottom:.15rem}
-  .app-desc{font-size:.85rem;color:var(--ink-soft);line-height:1.6;font-weight:300;flex:1}
-  .app-link{margin-top:.75rem;font-size:.75rem;font-weight:600;color:var(--lav-dark);display:flex;align-items:center;gap:.25rem;letter-spacing:.04em;transition:gap .2s}
-  .app-card:hover .app-link{gap:.5rem}
-
   /* FOOTER */
   .footer-section{
     background:var(--cream);border-top:1px solid var(--rule);padding:4rem 3rem;
@@ -339,7 +323,6 @@
 
   /* RESPONSIVE */
   @media(max-width:1100px){
-    .apps-grid{grid-template-columns:repeat(2,1fr)}
     .now-grid{grid-template-columns:repeat(2,1fr)}
     .cred-grid{grid-template-columns:1fr}
     .writing-grid{grid-template-columns:1fr}
@@ -361,7 +344,6 @@
   @media(max-width:640px){
     nav{padding:1rem 1.25rem}
     .nav-center{gap:1.5rem}
-    .apps-grid{grid-template-columns:1fr 1fr}
     .now-grid{grid-template-columns:1fr 1fr}
     .footer-section{flex-direction:column;align-items:flex-start}
     .path-list::before{left:.3rem}
@@ -371,7 +353,6 @@
     .path-close{margin-left:0}
   }
   @media(max-width:480px){
-    .apps-grid{grid-template-columns:1fr}
     .now-grid{grid-template-columns:1fr}
   }
 </style>
@@ -387,7 +368,6 @@
     <a href="#credentials">Work</a>
     <!-- Writing hidden until the Nov 3 naming post. Restore with the section below. -->
     <a href="#coaching">Coaching</a>
-    <a href="#apps">Built</a>
     <a href="#now">Now</a>
   </div>
   <div class="nav-right">
@@ -636,49 +616,6 @@
     <figure class="quote-card"><blockquote class="quote-text">&ldquo;As someone two years out of school and looking to pivot my career, I felt stuck&hellip; [Alison] provided direct, practical, and action-oriented guidance that immediately made the process feel more manageable.&rdquo;</blockquote><figcaption class="quote-who">Maddie B.</figcaption></figure>
   </div>
   <p class="quote-src">5.0 from 6 reviews on <a href="https://www.joinleland.com/alison-lee" target="_blank" rel="noopener">Leland</a>.</p>
-</div>
-
-<!-- BUILT BY ME -->
-<div class="section f6" id="apps">
-  <div class="section-header">
-    <h2 class="section-title">Built by me</h2>
-    <span class="section-label">Vibe-coded</span>
-  </div>
-  <div class="apps-grid">
-
-    <a href="https://betweenapp.co" class="app-card" target="_blank" rel="noopener">
-      <div class="app-icon">◈</div>
-      <div class="app-cat">App</div>
-      <div class="app-name">Between</div>
-      <p class="app-desc">A therapy prep tool that helps you make the most of every session. Track patterns, organize thoughts, and show up ready.</p>
-      <span class="app-link">Explore <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
-    </a>
-
-    <a href="https://values.alisonicolee.com" class="app-card" target="_blank" rel="noopener">
-      <div class="app-icon">❋</div>
-      <div class="app-cat">Quiz</div>
-      <div class="app-name">Values Inventory</div>
-      <p class="app-desc">A forced-choice quiz that ranks what you actually value. No self-rating, no lying to yourself. Five minutes, one honest mirror.</p>
-      <span class="app-link">Take the quiz <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
-    </a>
-
-    <a href="https://gratefull.alisonicolee.com" class="app-card" target="_blank" rel="noopener">
-      <div class="app-icon">◉</div>
-      <div class="app-cat">Tool</div>
-      <div class="app-name">Gratitude Jar</div>
-      <p class="app-desc">A small daily practice, digitized. Drop in what you're grateful for and revisit it whenever you need a reminder.</p>
-      <span class="app-link">Try it <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
-    </a>
-
-    <a href="https://efflorescence.alisonicolee.com/" class="app-card" target="_blank" rel="noopener">
-      <div class="app-icon">✿</div>
-      <div class="app-cat">App</div>
-      <div class="app-name">Greenhouse</div>
-      <p class="app-desc">A healing companion for women navigating breakups. Habit tracking, journaling, and evidence-based tools. Because you were always the garden.</p>
-      <span class="app-link">Explore <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg></span>
-    </a>
-
-  </div>
 </div>
 
 <!-- NOW -->
