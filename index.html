@@ -284,12 +284,67 @@
   .footer-links a:hover{color:var(--lav-dark)}
   .footer-copy{font-size:.75rem;color:var(--ink-soft);opacity:.5;width:100%;text-align:center;margin-top:1rem}
 
+
+  /* PATH */
+  .path-section{background:var(--cream);padding:6rem 3rem;border-bottom:1px solid var(--rule)}
+  .path-inner{max-width:900px;margin:0 auto}
+  .path-intro{font-size:1.05rem;color:var(--ink-soft);line-height:1.7;font-weight:300;max-width:640px;margin-bottom:3rem}
+  .path-list{list-style:none;position:relative}
+  .path-list::before{content:'';position:absolute;left:5.5rem;top:.6rem;bottom:.6rem;width:1px;background:var(--lav-mid);opacity:.6}
+  .path-item{display:grid;grid-template-columns:5.5rem 1fr;gap:2.25rem;padding:0 0 2.75rem;position:relative}
+  .path-item::after{content:'';position:absolute;left:calc(5.5rem - 5px);top:.55rem;width:11px;height:11px;border-radius:50%;background:var(--bg);border:2px solid var(--lav-dark)}
+  .path-item.self::after{background:var(--gold);border-color:var(--gold)}
+  .path-year{font-family:'Playfair Display',Georgia,serif;font-size:1.05rem;font-weight:700;color:var(--lav-dark);padding-top:.15rem;text-align:right;padding-right:1.25rem}
+  .path-title{font-family:'Playfair Display',Georgia,serif;font-size:1.45rem;font-weight:700;letter-spacing:-.015em;margin-bottom:.6rem}
+  .path-title em{font-style:italic;font-weight:400;color:var(--gold)}
+  .path-text{font-size:.98rem;color:var(--ink-soft);line-height:1.75;font-weight:300}
+  .path-text + .path-text{margin-top:.6rem}
+  .path-door{margin-top:.85rem;font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--lav-dark);display:flex;align-items:center;gap:.6rem}
+  .path-door::before{content:'';width:18px;height:1px;background:var(--gold)}
+  .path-close{margin:1rem 0 0 7.75rem;padding:2rem 2.25rem;background:var(--lav);border-radius:14px}
+  .path-close p{font-family:'Playfair Display',Georgia,serif;font-size:1.2rem;line-height:1.6;color:var(--lav-xd)}
+  .path-close p + p{margin-top:.75rem}
+  .path-close strong{font-weight:700}
+  .path-close a{display:inline-block;margin-top:1.25rem;font-family:'Jost',sans-serif;font-size:.8rem;font-weight:600;letter-spacing:.06em;color:var(--lav-dark);text-decoration:none;border-bottom:1px solid var(--lav-mid)}
+
+  /* COACHING */
+  .coach-intro{font-size:1.05rem;color:var(--ink-soft);line-height:1.7;font-weight:300;max-width:680px;margin:-1rem 0 2.5rem}
+  .offer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+  .offer-card{border:1px solid var(--rule);border-radius:14px;background:white;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+  .offer-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(60,52,137,.1)}
+  .offer-card img{width:100%;height:auto;aspect-ratio:1200/630;object-fit:cover;display:block;border-bottom:1px solid var(--rule)}
+  .offer-body{padding:1.6rem 1.5rem 1.75rem;display:flex;flex-direction:column;gap:.9rem;flex:1}
+  .offer-top{display:flex;justify-content:space-between;align-items:baseline;gap:1rem}
+  .offer-name{font-family:'Playfair Display',Georgia,serif;font-size:1.25rem;font-weight:700;line-height:1.2}
+  .offer-price{font-family:'Playfair Display',Georgia,serif;font-size:1.2rem;font-weight:700;color:var(--lav-dark);white-space:nowrap}
+  .offer-hours{font-size:.66rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--lav-dark);background:var(--lav);border-radius:100px;padding:.35rem .8rem;width:fit-content}
+  .offer-brief{font-size:.9rem;color:var(--ink-soft);line-height:1.65;font-weight:300}
+  .offer-label{font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);margin-top:.2rem}
+  .offer-list{list-style:none;display:flex;flex-direction:column;gap:.45rem;flex:1}
+  .offer-list li{font-size:.86rem;color:var(--ink-soft);line-height:1.5;padding-left:1.1rem;position:relative}
+  .offer-list li::before{content:'';position:absolute;left:0;top:.6rem;width:6px;height:6px;border-radius:50%;background:var(--gold)}
+  .offer-cta{margin-top:.6rem;display:inline-flex;align-items:center;gap:.5rem;font-size:.8rem;font-weight:600;letter-spacing:.04em;color:var(--lav-dark);text-decoration:none}
+  .offer-cta:hover{color:var(--lav-xd)}
+  .coach-book{margin-top:2.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;background:var(--lav-dark);color:white;border-radius:14px;padding:2rem 2.25rem}
+  .coach-book h3{font-family:'Playfair Display',Georgia,serif;font-size:1.4rem;font-weight:700;letter-spacing:-.01em}
+  .coach-book p{font-size:.92rem;font-weight:300;opacity:.8;margin-top:.35rem}
+  .coach-book a{background:white;color:var(--lav-dark);text-decoration:none;padding:.85rem 1.8rem;border-radius:100px;font-size:.85rem;font-weight:600;letter-spacing:.04em;white-space:nowrap;transition:transform .2s}
+  .coach-book a:hover{transform:translateY(-2px)}
+  .quote-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+  .quote-card{border-left:2px solid var(--gold);padding:.25rem 0 .25rem 1.25rem}
+  .quote-text{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:1.02rem;line-height:1.6;color:var(--lav-xd)}
+  .quote-who{margin-top:.75rem;font-size:.75rem;font-weight:600;letter-spacing:.08em;color:var(--ink-soft)}
+  .quote-src{margin-top:1.5rem;font-size:.78rem;color:var(--ink-soft)}
+  .quote-src a{color:var(--lav-dark);font-weight:600}
+
   /* RESPONSIVE */
   @media(max-width:1100px){
     .apps-grid{grid-template-columns:repeat(2,1fr)}
     .now-grid{grid-template-columns:repeat(2,1fr)}
     .cred-grid{grid-template-columns:1fr}
     .writing-grid{grid-template-columns:1fr}
+    .offer-grid{grid-template-columns:1fr;max-width:560px}
+    .quote-grid{grid-template-columns:1fr}
   }
   @media(max-width:900px){
     .hero{grid-template-columns:1fr;min-height:auto}
@@ -301,6 +356,7 @@
     .pov-strip{padding:4rem 2rem}
     .cred-strip{padding:3.5rem 2rem}
     .footer-section{padding:3rem 2rem}
+    .path-section{padding:4rem 2rem}
   }
   @media(max-width:640px){
     nav{padding:1rem 1.25rem}
@@ -308,6 +364,11 @@
     .apps-grid{grid-template-columns:1fr 1fr}
     .now-grid{grid-template-columns:1fr 1fr}
     .footer-section{flex-direction:column;align-items:flex-start}
+    .path-list::before{left:.3rem}
+    .path-item{grid-template-columns:1fr;gap:.35rem;padding-left:1.75rem}
+    .path-item::after{left:-.05rem}
+    .path-year{text-align:left;padding-right:0}
+    .path-close{margin-left:0}
   }
   @media(max-width:480px){
     .apps-grid{grid-template-columns:1fr}
@@ -322,8 +383,10 @@
   <span class="nav-name"><a href="/">Alison Nicole Lee</a></span>
   <div class="nav-center">
     <a href="#about">About</a>
+    <a href="#path">Path</a>
     <a href="#credentials">Work</a>
     <!-- Writing hidden until the Nov 3 naming post. Restore with the section below. -->
+    <a href="#coaching">Coaching</a>
     <a href="#apps">Built</a>
     <a href="#now">Now</a>
   </div>
@@ -407,9 +470,69 @@
       I vibe-code small apps on the side to stay close to where AI is actually going, not where people say it's going. I write about what I learn: what it takes to go from zero to building, what gets easier, and what doesn't.
     </p>
     <div class="about-links">
+      <a href="#coaching">Book a call</a>
       <a href="mailto:lee.alisonnicole@gmail.com">Email</a>
       <a href="https://www.linkedin.com/in/alison-lee/" target="_blank" rel="noopener">LinkedIn</a>
       <a href="https://www.instagram.com/alisonnicolelee/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+</section>
+
+<!-- PATH -->
+<section class="path-section" id="path">
+  <div class="path-inner">
+    <div class="section-header">
+      <h2 class="section-title">The path</h2>
+      <span class="section-label">Pivot points</span>
+    </div>
+    <p class="path-intro">Sales, then strategy, then sideways into AI. Almost every door along the way, someone opened for me.</p>
+    <ol class="path-list">
+      <li class="path-item">
+        <div class="path-year">2018</div>
+        <div>
+          <h3 class="path-title">P&amp;G</h3>
+          <p class="path-text">I wanted to learn sales, because every business runs on it, and P&amp;G was the best training ground there was. It was also the first stock my grandmother ever bought.</p>
+          <p class="path-text">I built an Excel tool that turned a report that took hours into one that took minutes. Fifty people ended up using it. I didn't call it building yet.</p>
+        </div>
+      </li>
+      <li class="path-item">
+        <div class="path-year">2022</div>
+        <div>
+          <h3 class="path-title">Wharton</h3>
+          <p class="path-text">I wanted more than my slice of CPG. I liked building the strategy for my customers, and I wanted to see more scenarios than one category could give me.</p>
+          <div class="path-door">Door: my managers, who wrote my recommendations</div>
+        </div>
+      </li>
+      <li class="path-item">
+        <div class="path-year">2024</div>
+        <div>
+          <h3 class="path-title">BCG</h3>
+          <p class="path-text">I wanted to see every industry and every function. Consulting taught me how to break a problem down, act on it, and hold my own in the rooms where the big decisions get made.</p>
+          <div class="path-door">Door: my classmates, who prepped me for every case</div>
+        </div>
+      </li>
+      <li class="path-item">
+        <div class="path-year">2026</div>
+        <div>
+          <h3 class="path-title">Sideways into <em>AI</em></h3>
+          <p class="path-text">Jude, now my boyfriend, built an app with Claude Code to help friends find time to get together. I signed up that day and built my first app on the side. When I showed it to a colleague, he said, &ldquo;you know I do this at BCG, right?&rdquo; I had no idea that was an option.</p>
+          <p class="path-text">I joined BCG's Applied AI team, shipped an agent now required on ~500 cases a year, and was promoted to Applied AI Lead, then Project Leader.</p>
+          <div class="path-door">Doors: Jude, and a colleague at BCG</div>
+        </div>
+      </li>
+      <li class="path-item self">
+        <div class="path-year">2026</div>
+        <div>
+          <h3 class="path-title">Scribe</h3>
+          <p class="path-text">I posted about becoming Applied AI Lead, and startups started reaching out. I left consulting because I wanted to be at an AI-native company, with people working at the frontier, in an operator role where I could have real impact.</p>
+          <div class="path-door">Door: this one I opened myself. I posted my work.</div>
+        </div>
+      </li>
+    </ol>
+    <div class="path-close">
+      <p>Every move that worked, I made for a reason that matched what I value. Scribe was autonomy and impact.</p>
+      <p><strong>Four of these doors, someone opened for me. Now I hold them open.</strong></p>
+      <a href="#coaching">Work with me &darr;</a>
     </div>
   </div>
 </section>
@@ -457,6 +580,63 @@
   </div>
 </div>
 -->
+
+<!-- COACHING -->
+<div class="section" id="coaching">
+  <div class="section-header">
+    <h2 class="section-title">Work with me</h2>
+    <span class="section-label">Career coaching</span>
+  </div>
+  <p class="coach-intro">I coach high-achievers through career pivots. Direct, practical, and warm. We start with what you actually want and work backward from there.</p>
+  <div class="offer-grid">
+    <article class="offer-card">
+      <img src="img/pivot-clarity-session.png" alt="Pivot Clarity Session" width="2400" height="1260" loading="lazy"/>
+      <div class="offer-body">
+        <div class="offer-top"><h3 class="offer-name">Pivot Clarity Session</h3><span class="offer-price">$225</span></div>
+        <span class="offer-hours">1.5 hours · live + written</span>
+        <p class="offer-brief">For when something about your career feels off and you can't name what, or you keep going in circles between two or three options.</p>
+        <div class="offer-label">You'll leave with</div>
+        <ul class="offer-list"><li>Your Values Inventory results, used in the session</li><li>A one-page pivot map: what you want, two or three real paths, and the tradeoffs</li><li>Your next three moves, with dates</li><li>A follow-up check-in two weeks later</li></ul>
+        <a class="offer-cta" href="https://www.joinleland.com/alison-lee" target="_blank" rel="noopener">Book on Leland &rarr;</a>
+      </div>
+    </article>
+    <article class="offer-card">
+      <img src="img/pivot-sprint.png" alt="Pivot Sprint" width="2400" height="1260" loading="lazy"/>
+      <div class="offer-body">
+        <div class="offer-top"><h3 class="offer-name">Pivot Sprint</h3><span class="offer-price">$600</span></div>
+        <span class="offer-hours">4 hours over 6 weeks · live + async</span>
+        <p class="offer-brief">For when you've decided to make a move and want to go from &ldquo;I think I want out&rdquo; to interview-ready.</p>
+        <div class="offer-label">You'll leave with</div>
+        <ul class="offer-list"><li>A clear direction and target list</li><li>A r&eacute;sum&eacute; and LinkedIn rewritten for the move</li><li>Outreach templates, a company tracker, and how to use AI in your search</li><li>Your pivot story, practiced out loud</li></ul>
+        <a class="offer-cta" href="https://www.joinleland.com/alison-lee" target="_blank" rel="noopener">Book on Leland &rarr;</a>
+      </div>
+    </article>
+    <article class="offer-card">
+      <img src="img/consulting-interview-prep.png" alt="Consulting Interview Prep" width="2400" height="1260" loading="lazy"/>
+      <div class="offer-body">
+        <div class="offer-top"><h3 class="offer-name">Consulting Interview Prep</h3><span class="offer-price">$450</span></div>
+        <span class="offer-hours">3 hours · live</span>
+        <p class="offer-brief">For when you have consulting interviews coming up and want to walk in confident on case and fit.</p>
+        <div class="offer-label">You'll leave with</div>
+        <ul class="offer-list"><li>Two or three full mock cases, run like the real thing</li><li>Written feedback within 24 hours of every session</li><li>Polished &ldquo;tell me about yourself&rdquo; and &ldquo;why consulting&rdquo; answers</li><li>A short list of habits to fix before interview day</li></ul>
+        <a class="offer-cta" href="https://www.joinleland.com/alison-lee" target="_blank" rel="noopener">Book on Leland &rarr;</a>
+      </div>
+    </article>
+  </div>
+  <div class="coach-book">
+    <div>
+      <h3>Not sure which one fits?</h3>
+      <p>Book a free intro call and we'll figure it out together.</p>
+    </div>
+    <a href="https://www.joinleland.com/alison-lee" target="_blank" rel="noopener">Book a free intro call</a>
+  </div>
+  <div class="quote-grid">
+    <figure class="quote-card"><blockquote class="quote-text">&ldquo;She didn't just reformat it. She asked what I actually wanted, then worked backward from there.&rdquo;</blockquote><figcaption class="quote-who">Jason B.</figcaption></figure>
+    <figure class="quote-card"><blockquote class="quote-text">&ldquo;She very quickly understood my personal situation and aspirations as well as career planning traps that can commonly happen from operating from FOMO rather than intentional design.&rdquo;</blockquote><figcaption class="quote-who">Rishi S.</figcaption></figure>
+    <figure class="quote-card"><blockquote class="quote-text">&ldquo;As someone two years out of school and looking to pivot my career, I felt stuck&hellip; [Alison] provided direct, practical, and action-oriented guidance that immediately made the process feel more manageable.&rdquo;</blockquote><figcaption class="quote-who">Maddie B.</figcaption></figure>
+  </div>
+  <p class="quote-src">5.0 from 6 reviews on <a href="https://www.joinleland.com/alison-lee" target="_blank" rel="noopener">Leland</a>.</p>
+</div>
 
 <!-- BUILT BY ME -->
 <div class="section f6" id="apps">
