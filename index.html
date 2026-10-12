@@ -154,6 +154,14 @@
     font-weight:400;font-style:italic;line-height:1.55;letter-spacing:-.01em;
     color:var(--lav-xd);margin-bottom:1.5rem;
   }
+  .why-title{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.8rem,3.4vw,2.6rem);font-weight:800;line-height:1.15;letter-spacing:-.025em;color:var(--ink);margin-bottom:2rem}
+  .why-title em{font-style:italic;color:#B8913F}
+  .why-body{max-width:640px;margin:0 auto 3rem;text-align:left}
+  .why-body p{font-size:1.05rem;line-height:1.8;color:var(--lav-xd);font-weight:300}
+  .why-body p + p{margin-top:1.1rem}
+  .why-body p.why-origin{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:1.2rem;line-height:1.7;font-weight:400}
+  .why-rule{width:48px;height:2px;background:#B8913F;margin:0 auto 2.5rem}
+  .pov-strip .pov-quote.small{font-size:clamp(1.15rem,2.2vw,1.5rem)}
   .pov-quote strong{font-style:normal;font-weight:700;color:var(--lav-dark)}
   .pov-attr{font-size:.8rem;font-weight:500;letter-spacing:.06em;color:var(--ink-soft);opacity:.6}
 
@@ -430,11 +438,18 @@
   </div>
 </section>
 
-<!-- POV STRIP -->
-<section class="pov-strip f4">
+<!-- WHY TOKENS IN GOLD -->
+<section class="pov-strip f4" id="why">
   <div class="pov-inner">
-    <div class="pov-label">Point of view</div>
-    <p class="pov-quote">
+    <div class="pov-label">Why tokens in gold</div>
+    <h2 class="why-title">Worth your weight in gold, <em>updated for AI.</em></h2>
+    <div class="why-body">
+      <p class="why-origin">The phrase came to me after I built my first app with AI. I'm not technical, and I'd made something that actually worked. The tokens it used cost almost nothing. The feeling of realizing I was capable of building it was priceless.</p>
+      <p>Every time you use AI, it spends tokens: the small chunks of text a model reads and writes. They're how AI gets priced, and they keep getting cheaper. AI put a token price on every task. The people who stay worth more than that price are the ones who know how to put it to work.</p>
+      <p>So the old compliment needed an update: make AI worth its tokens in gold. Get back more than you spend. That's what I write about, and what I help people do.</p>
+    </div>
+    <div class="why-rule"></div>
+    <p class="pov-quote small">
       "The gap isn't between people who can use AI and people who can't.
       It's between people who <strong>know what to ask</strong> and people who are just prompting into the void."
     </p>
