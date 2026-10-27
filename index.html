@@ -95,6 +95,11 @@
     display:flex;align-items:center;gap:.75rem;
   }
   .hero-eyebrow::before{content:'';width:28px;height:1px;background:var(--gold)}
+  .hero-framer{
+    font-family:'Playfair Display',Georgia,serif;
+    font-size:1.15rem;font-style:italic;color:var(--ink-soft);
+    margin-bottom:.4rem;
+  }
   .hero-h1{
     font-family:'Playfair Display',Georgia,serif;
     font-size:clamp(2.4rem,4.4vw,4.2rem);
@@ -102,8 +107,7 @@
     margin-bottom:1.25rem;
   }
   .hero-h1 .gold{color:var(--gold);font-style:italic;font-weight:400;white-space:nowrap}
-  .hero-desc{font-size:1.05rem;color:var(--ink-soft);line-height:1.65;max-width:520px;margin-bottom:1rem}
-  .hero-cred{font-size:.88rem;font-weight:500;color:var(--ink);margin-bottom:1.5rem;white-space:nowrap}
+  .hero-desc{font-size:1.05rem;color:var(--ink-soft);line-height:1.65;max-width:520px;margin-bottom:1.5rem}
 
   /* SECTION BASICS */
   .section{padding:5rem 3rem}
@@ -233,8 +237,7 @@
     .hero-text-col{padding:1.5rem 1rem 2rem}
     .hero-eyebrow{margin-bottom:.6rem}
     .hero-h1{font-size:clamp(2.25rem,10vw,3rem);margin-bottom:.9rem}
-    .hero-desc{font-size:1rem;line-height:1.55;margin-bottom:.75rem}
-    .hero-cred{font-size:.82rem;margin-bottom:1rem}
+    .hero-desc{font-size:1rem;line-height:1.55;margin-bottom:1.1rem}
     .hero .cta-row{gap:.25rem 1.25rem}
     .section{padding:3.5rem 1rem}
     .pov{padding:3.5rem 1rem}
@@ -248,7 +251,6 @@
   @media(max-width:360px){
     .header-name{font-size:1rem}
     .header-cta{padding:.5rem 1rem}
-    .hero-cred{white-space:normal}
   }
 </style>
 </head>
@@ -270,9 +272,9 @@
   <div class="hero-text-col">
     <div class="photo-frame hero-photo-sm"><img src="alison.jpg" alt="" width="76" height="76"/></div>
     <div class="hero-eyebrow">Strategist · Builder · Coach</div>
-    <h1 class="hero-h1">Make AI worth its <span class="gold">tokens in gold</span>.</h1>
+    <p class="hero-framer">AI put a price on every task</p>
+    <h1 class="hero-h1">Make AI worth its <span class="gold">tokens in gold</span></h1>
     <p class="hero-desc">I work in AI strategy and coach people through AI and career pivots. I taught myself AI (I'm not technical, and I only made it through Comp Sci 101), so I explain it like someone starting from zero.</p>
-    <p class="hero-cred">Scribe now · BCG and P&amp;G before · New York</p>
     <div class="cta-row">
       <a class="btn-primary" href="https://www.joinleland.com/alison-lee" target="_blank" rel="noopener">Book a free intro call</a>
       <a class="btn-link" href="https://www.linkedin.com/in/alison-lee/" target="_blank" rel="noopener">Follow me on LinkedIn &rarr;</a>
@@ -305,7 +307,7 @@
 <!-- POINT OF VIEW -->
 <section class="pov reveal">
   <div class="pov-inner">
-    <p class="pov-quote">&ldquo;The gap isn't between people who use AI and people who don't. It's between people who <strong>know what to ask</strong> and people who are just wasting tokens.&rdquo;</p>
+    <p class="pov-quote">&ldquo;The gap isn't between people who use AI and people who don't. It's between people who <strong>know what to ask</strong> and people who are just <strong>wasting tokens</strong>.&rdquo;</p>
     <div class="pov-attr">Alison Nicole Lee</div>
   </div>
 </section>
@@ -408,7 +410,7 @@
       <li class="path-card">
         <h3 class="path-head"><span class="yr">2022</span> · Wharton</h3>
         <p class="path-text">I wanted more than my slice of CPG.</p>
-        <p class="path-door">Door: my amazing managers who wrote my recommendations.</p>
+        <p class="path-door">Door: my managers, who wrote my recommendations.</p>
       </li>
       <li class="path-card">
         <h3 class="path-head"><span class="yr">2024</span> · BCG</h3>
