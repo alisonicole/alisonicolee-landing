@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+<title>Skill Starter Card · Alison Nicole Lee</title>
+<meta name="description" content="A free two-sided card to turn one weekly task into a saved AI Skill in 15 minutes. From Stop Prompting. Start Training."/>
+<meta property="og:title" content="Stop Prompting. Start Training. The free Skill Starter Card"/>
+<meta property="og:description" content="Turn one weekly task into a saved AI Skill in 15 minutes. Free, from Alison Nicole Lee."/>
+<meta property="og:image" content="https://alisonicolee.com/skill-card-side1.png"/>
+<meta property="og:url" content="https://alisonicolee.com/skill"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    --ink:#12102b; --ink-soft:#5c5785; --bg:#FDFCFF; --lav:#EAE6FB; --lav-mid:#AFA9EC;
+    --lav-dark:#3C3489; --lav-xd:#2a1f5c; --rule:rgba(175,169,236,.35); --cream:#FAF8FF;
+    --gold:#C9A961; --gold-text:#8A6A1F;
+  }
+  html{scroll-behavior:smooth}
+  body{font-family:'Jost',system-ui,sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+
+  .btn-primary{
+    display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.8rem 1.75rem;border-radius:100px;
+    background:var(--lav-dark);color:#fff;text-decoration:none;border:0;cursor:pointer;
+    font-family:inherit;font-size:.95rem;font-weight:600;letter-spacing:.02em;transition:background .25s,transform .2s,box-shadow .25s;
+  }
+  .btn-primary:hover{background:var(--lav-xd);transform:translateY(-2px);box-shadow:0 8px 28px rgba(60,52,137,.3)}
+  .btn-link{display:inline-flex;align-items:center;min-height:44px;font-size:.95rem;font-weight:600;color:var(--lav-dark);text-decoration:none}
+  .btn-link:hover{text-decoration:underline;text-underline-offset:4px}
+
+  .site-header{position:sticky;top:0;z-index:100;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.6rem 3rem;background:rgba(253,252,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--rule)}
+  .header-name{font-family:'Playfair Display',Georgia,serif;font-size:1.1rem;font-weight:700;letter-spacing:-.01em;text-decoration:none;white-space:nowrap}
+  .header-link{font-size:.9rem;font-weight:600;color:var(--lav-dark);text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+  .header-link:hover{text-decoration:underline;text-underline-offset:4px}
+
+  .hero{display:grid;grid-template-columns:1.05fr 1fr;gap:3.5rem;max-width:1100px;margin:0 auto;padding:4.5rem 3rem;align-items:center}
+  .eyebrow{font-size:.72rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--lav-dark);margin-bottom:1rem;display:flex;align-items:center;gap:.75rem}
+  .eyebrow::before{content:'';width:28px;height:1px;background:var(--gold)}
+  h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(2.3rem,4.4vw,3.8rem);font-weight:900;line-height:1.05;letter-spacing:-.03em;margin-bottom:1.1rem}
+  h1 .gold{color:var(--gold);font-style:italic;font-weight:400}
+  .lead{font-size:1.08rem;color:var(--ink-soft);line-height:1.65;max-width:520px;margin-bottom:1.5rem}
+  .bullets{list-style:none;display:grid;gap:.55rem;margin-bottom:1.75rem}
+  .bullets li{font-size:.98rem;line-height:1.5;padding-left:1.2rem;position:relative;color:var(--ink)}
+  .bullets li::before{content:'';position:absolute;left:0;top:.55rem;width:6px;height:6px;border-radius:50%;background:var(--gold)}
+
+  .signup{display:flex;gap:.6rem;flex-wrap:wrap;max-width:520px}
+  .signup input[type=email]{
+    flex:1 1 240px;min-height:48px;padding:.75rem 1.1rem;border-radius:100px;border:1.5px solid var(--lav-mid);background:#fff;
+    font-family:inherit;font-size:1rem;color:var(--ink);
+  }
+  .signup input[type=email]:focus{outline:2px solid var(--lav-dark);outline-offset:1px;border-color:var(--lav-dark)}
+  .fine{font-size:.82rem;color:var(--ink-soft);margin-top:.65rem;max-width:520px;line-height:1.5}
+  .thanks{display:none;background:var(--lav);border-radius:14px;padding:1.25rem 1.4rem;max-width:520px}
+  .thanks h2{font-family:'Playfair Display',Georgia,serif;font-size:1.35rem;color:var(--lav-xd);margin-bottom:.35rem}
+  .thanks p{font-size:.98rem;line-height:1.6;color:var(--ink)}
+  .is-thanks .thanks{display:block}
+  .is-thanks .signup-wrap{display:none}
+  .error{display:none;color:#9a2c2c;font-size:.88rem;margin-top:.5rem}
+
+  .preview{display:flex;gap:1rem;justify-content:center;align-items:flex-start}
+  .preview figure{flex:1 1 0;max-width:260px;background:#fff;border:1px solid var(--rule);border-radius:10px;box-shadow:0 20px 50px rgba(60,52,137,.16);overflow:hidden}
+  .preview figure:nth-child(1){transform:rotate(-2deg) translateY(8px)}
+  .preview figure:nth-child(2){transform:rotate(2deg) translateY(-8px)}
+  .preview img{display:block;width:100%;height:auto}
+
+  .after{background:var(--lav-dark);color:#fff;text-align:center;padding:4rem 3rem}
+  .after .in{max-width:640px;margin:0 auto}
+  .after h2{font-family:'Playfair Display',Georgia,serif;font-size:1.8rem;font-weight:700;margin-bottom:.7rem}
+  .after p{font-size:1.05rem;line-height:1.65;color:rgba(255,255,255,.9);margin-bottom:1.5rem}
+  .after .row{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:.5rem 1.5rem}
+  .after .btn-primary{background:#fff;color:var(--lav-dark)}
+  .after .btn-primary:hover{background:var(--lav)}
+  .after .btn-link{color:#fff}
+
+  .footer{background:var(--cream);border-top:1px solid var(--rule);padding:2.5rem 3rem;text-align:center}
+  .footer-tagline{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:1.1rem;color:var(--lav-dark);margin-bottom:.75rem}
+  .footer-links{display:flex;justify-content:center;flex-wrap:wrap;gap:.25rem 1.75rem;margin-bottom:.5rem}
+  .footer-links a{display:inline-flex;align-items:center;min-height:44px;font-size:.92rem;font-weight:500;color:var(--ink-soft);text-decoration:none}
+  .footer-links a:hover{color:var(--lav-dark)}
+  .footer-copy{font-size:.8rem;color:var(--ink-soft)}
+
+  @media(max-width:900px){
+    .site-header{padding:.5rem 1rem}
+    .hero{grid-template-columns:1fr;gap:2.5rem;padding:2.5rem 1rem 3rem}
+    .preview{order:2}
+    .after{padding:3rem 1rem}
+    .footer{padding:2rem 1rem}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a class="header-name" href="/">Alison Nicole Lee</a>
+  <a class="header-link" href="/">alisonicolee.com</a>
+</header>
+
+<main>
+<section class="hero" id="top">
+  <div>
+    <div class="eyebrow">Free · From NextUp SoCal</div>
+    <h1>Stop Prompting. <span class="gold">Start Training.</span></h1>
+    <p class="lead">The two-sided Skill Starter Card from my session: fill in your spec, run the worth-it test, and turn one weekly task into a saved AI Skill in 15 minutes.</p>
+    <ul class="bullets">
+      <li>Works in Claude, ChatGPT, Gemini, and Copilot</li>
+      <li>A paste-ready template plus three Skills to steal</li>
+      <li>One new Skill in your inbox when I publish it. No spam, unsubscribe any time.</li>
+    </ul>
+
+    <div id="signup-wrap" class="signup-wrap">
+      <!-- KIT FORM: replace YOUR_FORM_ID with the numeric ID from your Kit form's embed code.
+           In Kit, set the form's success redirect to https://alisonicolee.com/skill?thanks=1 -->
+      <form class="signup" id="signup" method="post" action="https://app.kit.com/forms/YOUR_FORM_ID/subscriptions" novalidate>
+        <label for="email" style="position:absolute;left:-9999px">Email address</label>
+        <input id="email" type="email" name="email_address" placeholder="you@email.com" autocomplete="email" required/>
+        <button class="btn-primary" type="submit">Send me the card</button>
+      </form>
+      <p class="error" id="err" role="alert">Please enter a valid email address.</p>
+      <p class="fine">I'll email the card right away, then send the occasional Skill or lesson from my Tokens in Gold writing. Your email stays with me.</p>
+    </div>
+
+    <div class="thanks" role="status">
+      <h2>Check your inbox.</h2>
+      <p>The card is on its way. If it doesn't show up in a few minutes, check Promotions or Spam. Then follow along on LinkedIn below.</p>
+    </div>
+  </div>
+
+  <div class="preview" aria-label="Preview of both sides of the card">
+    <figure><img src="skill-card-side1.png" alt="Side 1 of the Skill Starter Card: fill in your Skill spec and the worth-it test" width="850" height="1100" loading="eager"/></figure>
+    <figure><img src="skill-card-side2.png" alt="Side 2 of the Skill Starter Card: the Monday 15 plan, paste-ready template, and three starters" width="850" height="1100" loading="eager"/></figure>
+  </div>
+</section>
+
+<section class="after">
+  <div class="in">
+    <h2>Want more like this?</h2>
+    <p>I post what I'm learning about making AI worth its tokens in gold, in public, every week on LinkedIn. If you build a Skill from the card, share it with #StopPromptingStartTraining.</p>
+    <div class="row">
+      <a class="btn-primary" href="https://www.linkedin.com/in/alison-lee/" target="_blank" rel="noopener">Follow me on LinkedIn</a>
+      <a class="btn-link" href="/">More about me &rarr;</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <p class="footer-tagline">Make AI worth its tokens in gold.</p>
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="https://www.linkedin.com/in/alison-lee/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="mailto:lee.alisonnicole@gmail.com">Email</a>
+  </div>
+  <p class="footer-copy">© 2026 Alison Nicole Lee</p>
+</footer>
+
+<script>
+  (function(){
+    // Thank-you state after Kit redirects back with ?thanks=1
+    try {
+      if (new URLSearchParams(location.search).get('thanks') === '1') {
+        document.body.classList.add('is-thanks');
+      }
+    } catch(e) {}
+
+    var form = document.getElementById('signup');
+    var err = document.getElementById('err');
+    form.addEventListener('submit', function(ev){
+      var v = document.getElementById('email').value.trim();
+      var ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+      if (!ok) {
+        ev.preventDefault();
+        err.textContent = 'Please enter a valid email address.';
+        err.style.display = 'block';
+        return;
+      }
+      // Safety net: never post to the placeholder URL.
+      if (form.action.indexOf('YOUR_FORM_ID') !== -1) {
+        ev.preventDefault();
+        err.textContent = 'Signup is not connected yet. Email lee.alisonnicole@gmail.com and I will send the card.';
+        err.style.display = 'block';
+        return;
+      }
+      err.style.display = 'none';
+    });
+  })();
+</script>
+</body>
+</html>
